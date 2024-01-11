@@ -19,7 +19,7 @@
  ✔ Container compose_test-conteneur_nul-1        Started
 
 
-[baptiste@localhost compose_test]$ docker compose ps
+[enzo@localhost compose_test]$ docker compose ps
 NAME                                 IMAGE     COMMAND        SERVICE               CREATED          STATUS          PORTS
 compose_test-conteneur_flopesque-1   debian    "sleep 9999"   conteneur_flopesque   14 seconds ago   Up 12 seconds
 compose_test-conteneur_nul-1         debian    "sleep 9999"   conteneur_nul         14 seconds ago   Up 12 seconds
@@ -28,7 +28,7 @@ compose_test-conteneur_nul-1         debian    "sleep 9999"   conteneur_nul     
 ## ouvrir un bash 
 
 ```bash
-[baptiste@localhost compose_test]$ docker exec -it compose_test-conteneur_nul-1 bash
+[enzo@localhost compose_test]$ docker exec -it compose_test-conteneur_nul-1 bash
 root@162c854f0b9e:/#
 
 root@162c854f0b9e:/# apt install iputils-ping

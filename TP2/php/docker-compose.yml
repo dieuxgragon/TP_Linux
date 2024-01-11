@@ -1,0 +1,29 @@
+version: '20.10'
+
+services:
+  mysql:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: enzo
+      MYSQL_PASSWORD: root
+
+php:
+    image: php:apache
+    restart: always
+    volumes:
+      - ./tp2/php/src
+    depends_on:
+      - mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+          - "8080:80"
+    depends_on:
+      - mysql
